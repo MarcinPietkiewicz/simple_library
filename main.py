@@ -1,3 +1,4 @@
+from library_options.users import Users
 from models.author import Author
 from models.book_copy import BookCopy
 from models.last_name import LastName
@@ -25,7 +26,10 @@ def main():
     if option == 'q':
         exit()
 
+    if int(option) == 3:
+        user_id = Users().add()
 
+    main()
 
 
     # book = Book().get_by_id(1)
