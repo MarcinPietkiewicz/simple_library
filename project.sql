@@ -322,3 +322,5 @@ end;
 
 alter table book_author rename book_author_through;
 -- _through suffix potrzebny do pevee tabeli laczacej zeby many-to-many dzialal
+
+alter table author drop column author_name;

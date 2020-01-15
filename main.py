@@ -1,18 +1,15 @@
+from library_options.books import Books
 from library_options.users import Users
 from models.author import Author
 from models.book_copy import BookCopy
 from models.last_name import LastName
 from models.rent_book import RentBook
 
-
 # Menu 1
 # 1 Add new Book
 # 2 Search Book
 # 3 Add user
 # q quit
-
-
-
 
 def main():
 
@@ -26,11 +23,20 @@ def main():
     if option == 'q':
         exit()
 
-    if int(option) == 3:
+    try:
+        option = int(option)
+    except ValueError:
+        main()
+
+    if option == 3:
         user_id = Users().add()
+        print(f'Dodatno użytkownika o ID {user_id}')
+
+    if option == 1:
+        book_id = Books().add()
+        print(f'Dodano książkę o ID {book_id}')
 
     main()
-
 
     # book = Book().get_by_id(1)
     # print(book.authors[0])
